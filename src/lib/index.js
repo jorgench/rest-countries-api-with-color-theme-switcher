@@ -22,7 +22,7 @@ const nameToKey = name => {
 const keyToName = key => {
   return key
     .split('_')
-    .map(x => x[0].toUpperCase() + x.split(1, x.length - 1))
+    .map(x => x[0].toUpperCase() + x.slice(1, x.length))
     .join(' ');
 };
 

@@ -4,6 +4,8 @@ import Vuex from 'vuex';
 const endPoint = 'https://restcountries.eu/rest/v2/';
 const fields = [
   'name',
+  'borders',
+  'alpha3Code',
   'population',
   'region',
   'capital',
@@ -46,6 +48,23 @@ const store = new Vuex.Store({
 
         return search && region;
       });
+    },
+    getDetail: state => name => {
+      let ct = state.countries.find(country => {
+        return country.name === name;
+      });
+
+      if (ct) {
+        const regEx = new RegExp('^(' + ct.borders.join('|') + ')$');
+
+        ct.borders = state.countries.filter(a => {
+          return Boolean(a.alpha3Code.match(regEx));
+        });
+
+        return ct;
+      } else {
+        return {};
+      }
     },
   },
   mutations: {

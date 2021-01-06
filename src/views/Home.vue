@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="page">
     <div class="wrapper">
       <div id="input-search">
         <input type="text" v-model="queryCountry" />
@@ -43,21 +43,12 @@
 
 <script>
 import CountryCard from '@/components/CountryCard';
-
 import lib from '@/lib';
 
 export default {
   name: 'Home',
   components: {
     CountryCard,
-  },
-  computed: {
-    countries() {
-      return this.$store.getters.getCountries({
-        query: this.queryCountry,
-        region: this.queryRegion,
-      });
-    },
   },
   data() {
     return {
@@ -73,6 +64,14 @@ export default {
         { label: 'Oceania', key: 'Oceana' },
       ],
     };
+  },
+  computed: {
+    countries() {
+      return this.$store.getters.getCountries({
+        query: this.queryCountry,
+        region: this.queryRegion,
+      });
+    },
   },
   methods: {
     openDetail(a) {
