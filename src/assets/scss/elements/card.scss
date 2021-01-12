@@ -49,4 +49,18 @@ $radius: 0.5rem;
       padding: 1em 1.5em;
     }
   }
+
+  & > &_list {
+    padding: 1em 0;
+
+    & > ul {
+      margin: 0;
+
+      & > li {
+        padding: 0.45em 1.5em;
+        margin: 0;
+        cursor: pointer;
+      }
+    }
+  }
 }

@@ -59,7 +59,6 @@ export default {
       queryCountry: '',
       queryRegion: '',
       regions: [
-        { label: 'Todos', key: '' },
         { label: 'Africa', key: 'Africa' },
         { label: 'America', key: 'Americas' },
         { label: 'Asia', key: 'Asia' },
