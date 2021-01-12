@@ -75,3 +75,12 @@
   grid-gap: 4.5rem;
   grid-template-columns: repeat(auto-fill, minmax(16.5rem, 1fr));
 }
+
+.field {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  & > {
+    flex-grow: 1;
+  }
+}

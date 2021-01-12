@@ -44,5 +44,9 @@ $radius: 0.5rem;
     & > *:last-child {
       margin-bottom: 0;
     }
+
+    &.is-less-border {
+      padding: 1em 1.5em;
+    }
   }
 }

@@ -1,2 +1,12 @@
 @import './card.scss';
 @import './topbar.scss';
+@import './input.scss';
+@import './dropdown.scss';
+
+/* -- Icon -- */
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}

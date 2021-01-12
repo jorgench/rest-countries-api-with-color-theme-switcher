@@ -1,16 +1,17 @@
 <template>
   <div class="page flow">
-    <div class="wrapper">
-      <div id="input-search">
-        <input type="text" v-model="queryCountry" />
+    <div class="wrapper field">
+      <div class="input-container | has-icon | bg-primary cl-base shadow-lg">
+        <svg class="icon" role="icon"></svg>
+        <input
+          type="text"
+          v-model="queryCountry"
+          placeholder="Search for a country..."
+        />
       </div>
 
       <div id="dropdown-select">
-        <select v-model="queryRegion">
-          <option :value="a.key" v-for="(a, i) in regions" :key="i">
-            {{ a.label }}
-          </option>
-        </select>
+        <dropdown :options="regions" />
       </div>
     </div>
     <div class="wrapper">
@@ -43,12 +44,14 @@
 
 <script>
 import CountryCard from '@/components/CountryCard';
+import Dropdown from '@/components/Dropdown';
 import lib from '@/lib';
 
 export default {
   name: 'Home',
   components: {
     CountryCard,
+    Dropdown,
   },
   data() {
     return {
