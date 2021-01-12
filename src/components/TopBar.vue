@@ -5,10 +5,11 @@
         <h4 class="title">Where in the world?</h4>
       </header>
       <button
-        class="button has-icon color-default bg-secondary"
+        class="button | has-icon | cl-base bg-primary"
         @click="changeState"
       >
-        Dark Mode
+        <svg class="icon"></svg>
+        <span>Dark Mode</span>
       </button>
     </div>
   </section>

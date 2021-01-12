@@ -1,26 +1,31 @@
 <template>
   <div class="page flow">
     <div class="wrapper">
-      <button @click="backView">Back</button>
+      <button
+        class="button | border | bg-primary cl-base shadow-sm"
+        @click="backView"
+      >
+        Back
+      </button>
     </div>
 
     <div class="wrapper">
       <div class="detail">
-        <div class="detail__image">
+        <div class="detail_image">
           <img :src="detail.flag" :alt="'flag of ' + detail.name" />
         </div>
 
-        <div class="detail__content">
-          <h3>{{ detail.name }}</h3>
+        <div class="detail_content">
+          <h3 class="title">{{ detail.name }}</h3>
 
-          <div>
+          <div class="txt1 | inner-flow">
             <p><strong>Native Name:</strong> {{ detail.nativeName }}</p>
             <p><strong>Population:</strong> {{ detail.population }}</p>
             <p><strong>Region:</strong> {{ detail.region }}</p>
             <p><strong>Sub Region:</strong> {{ detail.subregion }}</p>
             <p><strong>Capital:</strong> {{ detail.capital }}</p>
           </div>
-          <div>
+          <div class="txt2 | inner-flow">
             <p v-if="detail.topLevelDomain.length > 0">
               <strong>Top Level Domain:</strong> {{ detail.topLevelDomain[0] }}
             </p>
