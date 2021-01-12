@@ -1,8 +1,8 @@
 <template>
-  <section class="topbar bg-secondary cl-white">
-    <div class="wrapper">
+  <section class="bg-primary cl-base">
+    <div class="topbar | wrapper">
       <header class="topbar_header">
-        <h4>Where in the world?</h4>
+        <h4 class="title">Where in the world?</h4>
       </header>
       <button
         class="button has-icon color-default bg-secondary"
@@ -20,7 +20,7 @@ export default {
 
   methods: {
     changeState() {
-      console.log('Hey I change the color');
+      this.$store.commit('changeMode');
     },
   },
 };

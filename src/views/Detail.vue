@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="page flow">
     <div class="wrapper">
       <button @click="backView">Back</button>
     </div>

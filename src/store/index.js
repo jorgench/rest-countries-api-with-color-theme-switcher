@@ -72,7 +72,7 @@ const store = new Vuex.Store({
       state.loadingState = payload;
     },
     changeMode(state) {
-      state.dark = !state.dark;
+      state.darkMode = !state.darkMode;
     },
     changeCountries(state, payload) {
       state.countries = payload;
@@ -85,8 +85,6 @@ const store = new Vuex.Store({
 
         fetch(endPoint + 'all?fields=' + fields)
           .then(d => {
-            console.log(d);
-
             d.json()
               .then(data => {
                 commit('changeCountries', data);

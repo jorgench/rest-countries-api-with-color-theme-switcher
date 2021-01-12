@@ -1,0 +1,20 @@
+.topbar {
+  display: flex;
+  padding: 2rem;
+  padding-bottom: 2rem;
+
+  .topbar_header {
+    flex-grow: 1;
+
+    & > * {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    & > .title {
+      font-family: $font-name;
+      font-size: $font-extra-bold;
+      font-size: 1rem;
+    }
+  }
+}

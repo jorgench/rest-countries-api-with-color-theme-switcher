@@ -1,5 +1,9 @@
 <template>
-  <div id="app">
+  <div
+    id="app"
+    class="flow | bg-secondary cl-base"
+    :data-mode="darkMode ? 'dark' : ''"
+  >
     <top-bar />
     <router-view />
   </div>
@@ -13,7 +17,14 @@ export default {
   components: {
     TopBar,
   },
+  computed: {
+    darkMode() {
+      return this.$store.state.darkMode;
+    },
+  },
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+@import '@/assets/scss/main.scss';
+</style>

@@ -1,0 +1,58 @@
+@import './config.scss';
+
+.wrapper {
+  margin-inline: auto;
+  padding-inline: 1rem;
+  max-width: $dim-max-width;
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, $dim-desktop-vertical);
+}
+
+.bg-secondary {
+  background-color: $color_body_light_bg;
+  transition: 0.5s ease-in-out;
+}
+
+.bg-primary {
+  background-color: $color_elements_light_bg;
+  transition: 0.25s ease-in-out;
+}
+
+.cl-base {
+  color: $color_content_light_cl;
+  transition: 0.25s ease-in-out;
+}
+
+[data-mode='dark'] {
+  &.bg-secondary,
+  .bg-secondary {
+    background-color: $color_body_dark_bg;
+  }
+
+  &.bg-primary,
+  .bg-primary {
+    background-color: $color_elements_dark_bg;
+  }
+
+  &.cl-base,
+  .cl-base {
+    color: $color_content_dark_cl;
+  }
+}
+
+.text-light {
+  font-family: $font-name;
+  font-size: $font-light;
+}
+
+.text-medium {
+  font-family: $font-name;
+  font-size: $font-semi-blod;
+}
+
+.text-dark {
+  font-family: $font-name;
+  font-size: $font-extra-bold;
+}

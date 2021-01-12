@@ -1,5 +1,5 @@
 <template>
-  <article class="card" @click="$emit('click', { name })">
+  <article class="card | bg-primary cl-base" @click="$emit('click', { name })">
     <img class="card__image" :src="flag" :alt="name" />
     <div class="card__content flow">
       <h4>{{ name }}</h4>

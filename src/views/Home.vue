@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="page flow">
     <div class="wrapper">
       <div id="input-search">
         <input type="text" v-model="queryCountry" />
