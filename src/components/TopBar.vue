@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-primary cl-base">
+  <section class="bg-primary cl-base shadow-sm">
     <div class="topbar | wrapper">
       <header class="topbar_header">
         <h4 class="title">Where in the world?</h4>

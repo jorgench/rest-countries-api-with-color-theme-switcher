@@ -10,6 +10,10 @@
   margin-top: var(--flow-space, $dim-desktop-vertical);
 }
 
+.inner-flow > * + * {
+  margin-top: var(--flow-space, $dim-inner-vertical);
+}
+
 .bg-secondary {
   background-color: $color_body_light_bg;
   transition: 0.5s ease-in-out;
@@ -55,4 +59,19 @@
 .text-dark {
   font-family: $font-name;
   font-size: $font-extra-bold;
+}
+
+.shadow-lg {
+  box-shadow: 0 0.5em 2em -1em rgba($color_content_light_cl, 0.5);
+}
+
+.shadow-sm {
+  box-shadow: 0 0.5em 1em -1em rgba($color_content_light_cl, 0.75);
+}
+
+.grid {
+  display: grid;
+  //grid-gap: 2.5rem;
+  grid-gap: 4.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(16.5rem, 1fr));
 }
