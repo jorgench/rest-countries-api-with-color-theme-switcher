@@ -22,7 +22,7 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
   state: {
     loadingState: false,
-    darkMode: false,
+    darkMode: localStorage.getItem('darkMode') ? true : false,
     countries: [],
   },
   getters: {
@@ -72,6 +72,7 @@ const store = new Vuex.Store({
       state.loadingState = payload;
     },
     changeMode(state) {
+      localStorage.setItem('darkMode', true);
       state.darkMode = !state.darkMode;
     },
     changeCountries(state, payload) {

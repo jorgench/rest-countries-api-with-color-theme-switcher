@@ -2,10 +2,11 @@
   <div class="page flow">
     <div class="wrapper">
       <button
-        class="button | border | bg-primary cl-base shadow-sm"
+        class="button | has-icon border | bg-primary cl-base shadow-sm"
         @click="backView"
       >
-        Back
+        <s-icon name="arrow-right" />
+        <span>Back</span>
       </button>
     </div>
 

@@ -3,7 +3,11 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 
+import SIcon from './components/sicon.vue';
+
 Vue.config.productionTip = false;
+
+Vue.component('s-icon', SIcon);
 
 new Vue({
   router,

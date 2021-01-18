@@ -4,7 +4,7 @@
     <div
       v-for="(tag, j) in tags"
       :key="j"
-      class="button | small border | bg-primary cl-base shadow-sm"
+      class="tag | bg-primary cl-base shadow-sm"
       @click="select(tag)"
     >
       {{ tag.name }}

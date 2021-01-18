@@ -8,7 +8,7 @@
       ref="trigger"
     >
       <span> {{ message }}</span>
-      <svg class="icon" role="icon"></svg>
+      <s-icon name="arrow-down" />
     </div>
 
     <div class="dropdown_content" ref="dropdown">

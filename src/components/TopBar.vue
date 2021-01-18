@@ -8,7 +8,7 @@
         class="button | has-icon | cl-base bg-primary"
         @click="changeState"
       >
-        <svg class="icon"></svg>
+        <s-icon :name="moonstate" />
         <span>Dark Mode</span>
       </button>
     </div>
@@ -18,6 +18,12 @@
 <script>
 export default {
   name: 'TopBar',
+
+  computed: {
+    moonstate() {
+      return this.$store.state.darkMode ? 'moon-on' : 'moon-off';
+    },
+  },
 
   methods: {
     changeState() {

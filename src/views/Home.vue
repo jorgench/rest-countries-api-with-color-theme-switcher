@@ -2,7 +2,7 @@
   <div class="page flow">
     <div class="wrapper field">
       <div class="input-container | has-icon | bg-primary cl-base shadow-lg">
-        <svg class="icon" role="icon"></svg>
+        <s-icon name="search" />
         <input
           type="text"
           v-model="queryCountry"
