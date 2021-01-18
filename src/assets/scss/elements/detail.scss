@@ -18,33 +18,17 @@
 
   & > &_content {
     grid-area: content;
-    display: grid;
-
-    // subgrid
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1rem auto 2rem auto;
-    grid-template-areas:
-      'title title'
-      'fake-gap1 fake-gap1'
-      'txt1 txt2'
-      'fake-gap2 fake-gap2'
-      'footer footer';
-
     & > .title {
-      grid-area: title;
       margin: 0;
     }
 
-    & > .txt1 {
-      grid-area: txt1;
+    & > .text {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+      grid-gap: 2rem;
     }
 
-    & > .txt2 {
-      grid-area: txt2;
-    }
-
-    & > div:last-child {
-      grid-area: footer;
+    & > .footer {
     }
   }
 }

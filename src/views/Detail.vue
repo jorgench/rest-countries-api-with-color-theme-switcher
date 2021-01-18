@@ -15,31 +15,34 @@
           <img :src="detail.flag" :alt="'flag of ' + detail.name" />
         </div>
 
-        <div class="detail_content">
+        <div class="detail_content | variant-flow">
           <h3 class="title">{{ detail.name }}</h3>
 
-          <div class="txt1 | inner-flow">
-            <p><strong>Native Name:</strong> {{ detail.nativeName }}</p>
-            <p><strong>Population:</strong> {{ detail.population }}</p>
-            <p><strong>Region:</strong> {{ detail.region }}</p>
-            <p><strong>Sub Region:</strong> {{ detail.subregion }}</p>
-            <p><strong>Capital:</strong> {{ detail.capital }}</p>
-          </div>
-          <div class="txt2 | inner-flow">
-            <p v-if="detail.topLevelDomain.length > 0">
-              <strong>Top Level Domain:</strong> {{ detail.topLevelDomain[0] }}
-            </p>
-            <p v-if="detail.currencies.length > 0">
-              <strong>Currencies:</strong> {{ detail.currencies[0].name }}
-            </p>
+          <div class="text">
+            <div class="inner-flow">
+              <p><strong>Native Name:</strong> {{ detail.nativeName }}</p>
+              <p><strong>Population:</strong> {{ detail.population }}</p>
+              <p><strong>Region:</strong> {{ detail.region }}</p>
+              <p><strong>Sub Region:</strong> {{ detail.subregion }}</p>
+              <p><strong>Capital:</strong> {{ detail.capital }}</p>
+            </div>
+            <div class="inner-flow">
+              <p v-if="detail.topLevelDomain.length > 0">
+                <strong>Top Level Domain:</strong>
+                {{ detail.topLevelDomain[0] }}
+              </p>
+              <p v-if="detail.currencies.length > 0">
+                <strong>Currencies:</strong> {{ detail.currencies[0].name }}
+              </p>
 
-            <p v-if="detail.languages.length > 0">
-              <strong>Languages:</strong>
-              {{ detail.languages.map(a => a.name).join() }}
-            </p>
+              <p v-if="detail.languages.length > 0">
+                <strong>Languages:</strong>
+                {{ detail.languages.map(a => a.name).join() }}
+              </p>
+            </div>
           </div>
 
-          <div>
+          <div class="footer">
             <strong>Border Countries:</strong>
             <tags :tags="detail.borders" @select="changeDetail" />
           </div>

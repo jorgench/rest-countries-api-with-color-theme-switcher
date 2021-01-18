@@ -14,6 +14,14 @@
   margin-top: var(--flow-space, $dim-inner-vertical);
 }
 
+.variant-flow > * + * {
+  $dim-basic: 1rem;
+  margin-top: $dim-basic;
+  &:last-child {
+    margin-top: $dim-basic * 2;
+  }
+}
+
 .bg-secondary {
   background-color: $color_body_light_bg;
   transition: 0.5s ease-in-out;
