@@ -1,6 +1,12 @@
 <template>
-  <div>
-    <div v-for="(tag, j) in tags" :key="j" @click="select(tag)">
+  <div class="group">
+    <strong v-if="title">{{ title }}</strong>
+    <div
+      v-for="(tag, j) in tags"
+      :key="j"
+      class="button | small border | bg-primary cl-base shadow-sm"
+      @click="select(tag)"
+    >
       {{ tag.name }}
     </div>
   </div>
@@ -10,6 +16,10 @@
 export default {
   name: 'Tags',
   props: {
+    title: {
+      type: String,
+      default: '',
+    },
     tags: {
       type: Array,
       default() {

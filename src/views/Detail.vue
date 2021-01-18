@@ -43,8 +43,11 @@
           </div>
 
           <div class="footer">
-            <strong>Border Countries:</strong>
-            <tags :tags="detail.borders" @select="changeDetail" />
+            <tags
+              title="Border Countries:"
+              :tags="detail.borders"
+              @select="changeDetail"
+            />
           </div>
         </div>
       </div>
