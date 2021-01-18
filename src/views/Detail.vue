@@ -43,7 +43,7 @@
             </div>
           </div>
 
-          <div class="footer">
+          <div class="footer" v-if="detail.borders.length">
             <tags
               title="Border Countries:"
               :tags="detail.borders"
@@ -57,7 +57,6 @@
 </template>
 
 <script>
-import lib from '@/lib';
 import Tags from '@/components/Tags';
 
 export default {
@@ -70,9 +69,7 @@ export default {
       return this.$store.getters.loading;
     },
     detail() {
-      return this.$store.getters.getDetail(
-        lib.keyToName(this.$route.params.name),
-      );
+      return this.$store.getters.getDetail(this.$route.params.code);
     },
   },
   methods: {
@@ -80,8 +77,8 @@ export default {
       this.$router.go(-1);
     },
     changeDetail(a) {
-      const nameCountry = lib.nameToKey(a.name);
-      this.$router.push({ name: 'Detail', params: { name: nameCountry } });
+      const nameCountry = a.alpha3Code.toLowerCase();
+      this.$router.push({ name: 'Detail', params: { code: nameCountry } });
     },
   },
   mounted() {

@@ -45,7 +45,6 @@
 <script>
 import CountryCard from '@/components/CountryCard';
 import Dropdown from '@/components/Dropdown';
-import lib from '@/lib';
 
 export default {
   name: 'Home',
@@ -77,8 +76,8 @@ export default {
   },
   methods: {
     openDetail(a) {
-      const nameCountry = lib.nameToKey(a.name);
-      this.$router.push({ name: 'Detail', params: { name: nameCountry } });
+      const nameCountry = a.alpha3Code.toLowerCase();
+      this.$router.push({ name: 'Detail', params: { code: nameCountry } });
     },
   },
   created() {

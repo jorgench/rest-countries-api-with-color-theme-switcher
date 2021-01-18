@@ -1,7 +1,7 @@
 <template>
   <article
     class="card | bg-primary cl-base shadow-lg"
-    @click="$emit('click', { name })"
+    @click="$emit('click', { name, alpha3Code })"
   >
     <div class="card_image">
       <img :src="flag" :alt="name" />
@@ -27,6 +27,7 @@ export default {
     population: Number,
     region: String,
     capital: String,
+    alpha3Code: String,
   },
 };
 </script>

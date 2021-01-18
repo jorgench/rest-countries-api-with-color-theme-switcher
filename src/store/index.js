@@ -49,9 +49,9 @@ const store = new Vuex.Store({
         return search && region;
       });
     },
-    getDetail: state => name => {
+    getDetail: state => alpha3Code => {
       let ct = state.countries.find(country => {
-        return country.name === name;
+        return country.alpha3Code === alpha3Code.toUpperCase();
       });
 
       if (ct) {
