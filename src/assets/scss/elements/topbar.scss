@@ -1,7 +1,13 @@
 .topbar {
   display: flex;
-  padding: 2rem;
-  padding-bottom: 2rem;
+
+  @media #{$mobile} {
+    padding: 2rem 1rem;
+  }
+
+  @media #{$desktop} {
+    padding: 2rem;
+  }
 
   .topbar_header {
     flex-grow: 1;
@@ -14,7 +20,14 @@
     & > .title {
       font-family: $font-name;
       font-size: $font-extra-bold;
-      font-size: 1rem;
+
+      @media #{$mobile} {
+        font-size: 1rem;
+      }
+
+      @media #{$desktop} {
+        font-size: 1.125rem;
+      }
     }
   }
 }

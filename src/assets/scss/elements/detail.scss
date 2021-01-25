@@ -3,8 +3,18 @@
   align-items: center;
 
   /* center */
-  grid-template-columns: 4.7fr 1fr 4.7fr;
-  grid-template-areas: 'image fake-gap content';
+  @media #{$mobile} {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 3rem auto;
+    grid-template-areas:
+      'image'
+      'fake-gap'
+      'content';
+  }
+  @media #{$desktop} {
+    grid-template-columns: 4.7fr 1fr 4.7fr;
+    grid-template-areas: 'image fake-gap content';
+  }
 
   & > &_image {
     width: 100%;
@@ -26,9 +36,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
       grid-gap: 2rem;
-    }
-
-    & > .footer {
     }
   }
 }

@@ -11,7 +11,7 @@
 }
 
 .inner-flow > * + * {
-  margin-top: var(--flow-space, $dim-inner-vertical);
+  margin-top: var(--flow-space-inner, $dim-inner-vertical);
 }
 
 .group {
@@ -102,6 +102,10 @@
   //grid-gap: 2.5rem;
   grid-gap: 4.5rem;
   grid-template-columns: repeat(auto-fill, minmax(16.5rem, 1fr));
+
+  @media #{$mobile} {
+    padding: 0 2.5rem;
+  }
 }
 
 .field {
@@ -110,5 +114,26 @@
   flex-wrap: wrap;
   & > {
     flex-grow: 1;
+  }
+
+  @media #{$mobile} {
+    flex-direction: column;
+    & > * + * {
+      margin-top: 2.5rem;
+    }
+  }
+
+  @media #{$desktop} {
+    flex-direction: row;
+  }
+}
+
+.page {
+  @media #{$mobile} {
+    --flow-space: 1.5rem;
+  }
+
+  @media #{$desktop} {
+    --flow-space: 4.5rem;
   }
 }
