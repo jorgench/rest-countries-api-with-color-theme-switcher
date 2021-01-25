@@ -50,13 +50,13 @@ const store = new Vuex.Store({
       });
     },
     getDetail: state => alpha3Code => {
-      let ct = state.countries.find(country => {
+      let ct = state.countries.slice().find(country => {
         return country.alpha3Code === alpha3Code.toUpperCase();
       });
 
       if (ct) {
+        ct = JSON.parse(JSON.stringify(ct));
         const regEx = new RegExp('^(' + ct.borders.join('|') + ')$');
-
         ct.borders = state.countries.filter(a => {
           return Boolean(a.alpha3Code.match(regEx));
         });
