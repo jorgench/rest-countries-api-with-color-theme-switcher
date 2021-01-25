@@ -3,15 +3,11 @@
     <div class="wrapper field">
       <div class="input-container | has-icon | bg-primary cl-base shadow-lg">
         <s-icon name="search" />
-        <input
-          type="text"
-          v-model="queryCountry"
-          placeholder="Search for a country..."
-        />
+        <input type="text" v-model="queryCountry" placeholder="Search for a country..." />
       </div>
 
       <div id="dropdown-select">
-        <dropdown :options="regions" />
+        <dropdown :options="regions" @change="changeRegion" />
       </div>
     </div>
     <div class="wrapper">
@@ -78,6 +74,9 @@ export default {
     openDetail(a) {
       const nameCountry = a.alpha3Code.toLowerCase();
       this.$router.push({ name: 'Detail', params: { code: nameCountry } });
+    },
+    changeRegion(a) {
+      this.queryRegion = a;
     },
   },
   created() {

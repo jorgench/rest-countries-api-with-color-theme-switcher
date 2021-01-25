@@ -7,7 +7,7 @@
       aria-pressed="false"
       ref="trigger"
     >
-      <span> {{ message }}</span>
+      <span>{{ messageComputed }}</span>
       <s-icon name="arrow-down" />
     </div>
 
@@ -16,14 +16,12 @@
         <div class="card_list">
           <ul>
             <li
-              v-for="(option, j) in options"
+              v-for="(option, j) in optionsComputed"
               role="button"
               aria-pressed="false"
               @click.prevent="openItem(option)"
               :key="j"
-            >
-              {{ option[labelKey] }}
-            </li>
+            >{{ option[labelKey] }}</li>
           </ul>
         </div>
       </div>
@@ -57,15 +55,45 @@ export default {
   data() {
     return {
       message: this.placeholder,
+      finalValue: {},
       state: false,
     };
   },
+
+  computed: {
+    evalue() {
+      return Object.entries(this.finalValue).length > 0;
+    },
+
+    optionsComputed() {
+      if (this.evalue) {
+        let otherItems = this.options.filter(a => {
+          return a[this.valueKey] != this.finalValue[this.valueKey];
+        });
+
+        otherItems.unshift({});
+
+        otherItems[0][this.valueKey] = '';
+        otherItems[0][this.labelKey] = 'All';
+
+        return otherItems;
+      } else {
+        return this.options;
+      }
+    },
+    messageComputed() {
+      return this.evalue ? this.finalValue[this.labelKey] : this.message;
+    },
+  },
+
   methods: {
     openDropdown() {
       this.state = !this.state;
     },
     openItem(item) {
       this.$emit('change', item[this.valueKey]);
+      this.finalValue = item[this.valueKey] ? item : {};
+      this.state = false;
     },
     clickedOutside(event) {
       if (!this.isElementInside(event.target)) this.state = false;

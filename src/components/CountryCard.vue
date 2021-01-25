@@ -4,15 +4,24 @@
     @click="$emit('click', { name, alpha3Code })"
   >
     <div class="card_image">
-      <img :src="flag" :alt="name" />
+      <img :src="flag" :alt="'flag ' + name" />
     </div>
 
     <div class="card_content inner-flow">
       <h4>{{ name }}</h4>
       <ul>
-        <li><strong>Population:</strong> {{ population }}</li>
-        <li><strong>Region:</strong> {{ region }}</li>
-        <li><strong>Capital:</strong> {{ capital }}</li>
+        <li>
+          <strong>Population:</strong>
+          {{ population }}
+        </li>
+        <li>
+          <strong>Region:</strong>
+          {{ region }}
+        </li>
+        <li>
+          <strong>Capital:</strong>
+          {{ capital }}
+        </li>
       </ul>
     </div>
   </article>
